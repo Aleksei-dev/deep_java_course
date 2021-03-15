@@ -2,6 +2,17 @@ apply plugin: 'java'
 apply plugin: 'application'
 mainClassName = "ru.stqa.pft.sandbox.MyFirstProgram"
 
+repositories {
+    maven {
+        url("https://plugins.gradle.org/m2/")
+    }
+}
+dependencies {
+    compile 'org.testng:testng:6.9.10'
+}
 test {
     useTestNG()
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
