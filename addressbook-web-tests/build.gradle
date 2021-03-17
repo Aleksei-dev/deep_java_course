@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+repositories {
+    maven {
+        url("https://plugins.gradle.org/m2/")
+    }
+}
+dependencies {
+    compile 'org.testng:testng:6.9.10'
+    compile 'org.seleniumhq.selenium:selenium-java:3.141.5'
+}
+test {
+    useTestNG()
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
