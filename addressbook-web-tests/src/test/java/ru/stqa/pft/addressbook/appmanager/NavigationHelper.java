@@ -21,4 +21,12 @@ public class NavigationHelper extends HelperBase {
     }
     click(By.linkText("groups"));
   }
+
+
+  public void goToHomePage() {
+    if(isElementPresent(By.xpath("//input[@value='Send e-Mail']"))){
+      return;
+    }
+    click(By.linkText("home"));
+  }
 }
